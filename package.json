@@ -1,0 +1,25 @@
+{
+  "name": "lizhi163",
+  "version": "1.0.0",
+  "description": "upload lizhi's songs to 163 music",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sjfkai/lizhi163.git"
+  },
+  "author": "sjfkai@163.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sjfkai/lizhi163/issues"
+  },
+  "homepage": "https://github.com/sjfkai/lizhi163#readme",
+  "dependencies": {
+    "chalk": "^5.0.1",
+    "got": "^12.0.2",
+    "NeteaseCloudMusicApi": "^4.5.9"
+  }
+}
