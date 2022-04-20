@@ -3,7 +3,7 @@ import readline from 'readline'
 import chalk from 'chalk'
 import got from 'got'
 import { createRequire } from 'module'
-import { readFile, writeFile } from 'fs/promises'
+import { readFile, writeFile, mkdir } from 'fs/promises'
 
 import songs from './songs.js'
 
@@ -14,6 +14,10 @@ const { login_cellphone, cloud } = require('NeteaseCloudMusicApi')
 const sleep = (ms) => new Promise(resolve => setTimeout(() => resolve(), ms))
 
 let completedSongs = []
+
+function ensureCacheDir() {
+  return mkdir(new URL('./.cache', import.meta.url), { recursive: true })
+}
 
 async function loadCompletedSongs() {
   try {
@@ -88,6 +92,7 @@ function uploadSongs(cookie) {
 }
 
 async function main() {
+  await ensureCacheDir()
   await loadCompletedSongs()
 
   let cookie = await loadCookie()
